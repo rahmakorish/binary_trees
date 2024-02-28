@@ -11,7 +11,7 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 		return;
 	else if (tree != NULL && func != NULL)
 	{
-		if (tree->right != NULL && tree->left != NULL)
+		if (tree->right != NULL || tree->left != NULL)
 		{
 			(*func)(tree->n);
 			if (tree->left != NULL)
