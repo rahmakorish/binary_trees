@@ -14,16 +14,20 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 		if (tree->right != NULL && tree->left != NULL)
 		{
 			(*func)(tree->n);
-			if (tree->left->left != NULL && tree->left->right != NULL)
+			if (tree->left->left != NULL || tree->left->right != NULL)
 			{
 				(*func)(tree->left->n);
+				if (tree->left->left != NULL)
 				(*func)(tree->left->left->n);
+				if (tree->left->right != NULL)
 				(*func)(tree->left->right->n);
 			}
-			if (tree->right->left != NULL && tree->right->right != NULL)
+			if (tree->right->left != NULL || tree->right->right != NULL)
 			{
 				(*func)(tree->right->n);
+				if (tree->right->left != NULL)
 				(*func)(tree->right->left->n);
+				if (tree->right->right != NULL)
 				(*func)(tree->right->right->n);
 			}
 		}
