@@ -10,7 +10,16 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *righty = malloc(sizeof(binary_tree_t));
 
-	if (righty != NULL && parent != NULL)
+	if (righty == NULL)
+	{
+		return (NULL);
+	}
+	if (parent == NULL)
+	{
+		free(righty);
+		return (NULL);
+	}
+	else if (righty != NULL && parent != NULL)
 	{
 		righty->n = value;
 		if (parent->right == NULL)
@@ -31,5 +40,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		return (righty);
 	}
 	else
-	return (NULL);
+	{
+		return (NULL);
+	}
 }
