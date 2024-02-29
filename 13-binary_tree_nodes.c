@@ -8,7 +8,7 @@
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
 	size_t nodes = 0;
-	const binary_tree_t *origin = tree;
+	/*const binary_tree_t *origin = tree;*/
 
 	if (tree == NULL)
 		return (0);
@@ -20,7 +20,7 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 			tree = tree->left;
 		}
 	}
-	tree = origin;
+	/*tree = origin;*/
 	if (tree->right != NULL)
 	{
 		while (tree->right)
