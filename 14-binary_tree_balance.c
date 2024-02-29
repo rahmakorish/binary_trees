@@ -19,7 +19,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 			tree = tree->left;
 		}
 	}
-	tree = tree;
 	while (tree->right != NULL)
 	{
 		if (tree->right)
