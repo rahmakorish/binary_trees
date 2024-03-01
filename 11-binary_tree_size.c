@@ -18,11 +18,15 @@ size_t binary_tree_size(const binary_tree_t *tree)
 		while (tree->left)
 		{
 			size += 1;
+			if (tree->left->right)
+				size += 1;
 			tree = tree->left;
 		}
 		while (origin->right)
 		{
 			size += 1;
+			if (origin->right->left)
+				size += 1;
 			origin = origin->right;
 		}
 	}
